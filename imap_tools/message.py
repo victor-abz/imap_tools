@@ -183,8 +183,10 @@ class MailMessage:
     @cached_property
     def headers(self) -> Dict[str, Tuple[str, ...]]:
         """
-        Message headers
-        Keys in result dict are in lower register (email headers are not case-sensitive)
+        Message headers.
+        All keys in result dict are in lower register - email headers are NOT case-sensitive.
+        Headers not decoding by design:
+        most of the time custom headers don't need this, typical header decoded at his properties.
         """
         result = {}
         for key, val in getattr(self.obj, '_headers', ()):
