@@ -1,3 +1,9 @@
+1.12.0
+======
+* Changed: MailMessage.headers now are lazy dict-like mapping - LazyHeaders. It fetches header values when accessed only.
+    Actually it is braking change, but in most cases it will works with old code.
+    The change saves memory and processor time.
+
 1.11.1
 ======
 * Added: __all__ in __init__ module.
@@ -13,7 +19,8 @@
 ======
 * Added: support IMAP command MOVE at BaseMailBox.move
 * Added: MailboxMoveError, raises from BaseMailBox.move when MOVE command is supported
-* Added: chunks argument for BaseMailBox.(copy,move,flag,delete) methods - Number of UIDs to proc at once, to avoid server errors on large set
+* Added: chunks argument for BaseMailBox.(copy,move,flag,delete) methods -
+    Number of UIDs to proc at once, to avoid server errors on large set
 * Changed: BaseMailBox.(copy,move,flag,delete) result types
 * Changed: utils.clean_uids now returns List[str]
 * Changed: utils.chunks_crop -> utils.chunked_crop, n arg renamed to chunk_size and it takes False-like vals
@@ -76,7 +83,8 @@
 
 1.3.0
 =====
-* Added support for python 3.12 - Since 3.12 keyfile and certfile arguments are deprecated for imaplib.IMAP4_SSL, ssl_context and timeout must be keyword arguments
+* Added support for python 3.12 - Since 3.12 keyfile and certfile arguments are deprecated
+    for imaplib.IMAP4_SSL, ssl_context and timeout must be keyword arguments
 
 1.2.0
 =====
@@ -170,7 +178,8 @@
 ======
 * Dropped support for python 3.3, 3.4
 * Added type annotations
-* [Breaking] utils.clean_uids - removed special case for Generator with "fetch" name for implicitly gets all uids. Use BaseMailBox.uids method instead.
+* [Breaking] utils.clean_uids - removed special case for Generator with "fetch" name for implicitly gets all uids.
+    Use BaseMailBox.uids method instead.
 * Removed BaseMailBox deprecated stuff: fetch miss_defect arg, seen method, search method
 
 0.46.0
@@ -337,7 +346,10 @@
 
 0.18.0
 ======
-* Added 14 new custom lib exceptions (errors.py): MailboxCopyError, MailboxDeleteError, MailboxExpungeError, MailboxFetchError, MailboxFlagError, MailboxFolderCreateError, MailboxFolderDeleteError, MailboxFolderRenameError, MailboxFolderSelectError, MailboxFolderStatusError, MailboxFolderStatusValueError, MailboxLoginError, MailboxLogoutError, MailboxSearchError
+* Added 14 new custom lib exceptions (errors.py):
+    MailboxCopyError, MailboxDeleteError, MailboxExpungeError, MailboxFetchError, MailboxFlagError,
+    MailboxFolderCreateError, MailboxFolderDeleteError, MailboxFolderRenameError, MailboxFolderSelectError,
+    MailboxFolderStatusError, MailboxFolderStatusValueError, MailboxLoginError, MailboxLogoutError, MailboxSearchError
 * UnexpectedCommandStatusError now not used directly.
 * Added folder.MailBoxFolderStatusOptions class instead MailBoxFolderManager.folder_status_options
 * utils.MessageFlags -> message.MailMessageFlags
@@ -444,7 +456,8 @@
 0.9.0
 =====
 * Added query builder - implemented the search logic described in rfc3501
-* MailBox.fetch - added "charset" parameter. If the "charset" argument is specified in MailBox.fetch, the search string will be encoded to this encoding.
+* MailBox.fetch - added "charset" parameter.
+    If the "charset" argument is specified in MailBox.fetch, the search string will be encoded to this encoding.
 * MailBox.fetch "search_criteria" parameter renamed to "criteria"
 * MailMessage.date now returns datetime.date
 * MailMessage.date_str attribute added
@@ -452,7 +465,8 @@
 * MailMessage.id removed
 * ImapToolsError base exception class removed
 * MailBoxWrongFlagError exception class removed
-* functions: (cleaned_uid_set,check_command_status,decode_value,parse_email_address,parse_email_date,quote,pairs_to_dict) moved to utils module
+* functions: (cleaned_uid_set,check_command_status,decode_value,parse_email_address,parse_email_date,quote,pairs_to_dict)
+    moved to utils module
 * readme text improved
 * fixed folder.set encoding dug
 
