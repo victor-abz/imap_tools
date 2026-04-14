@@ -112,7 +112,7 @@ MailMessage and MailAttachment public attributes are cached by functools.cached_
         msg.text         # str: 'Hello 你 Привет'
         msg.html         # str: '<b>Hello 你 Привет</b>'
         msg.flags        # tuple: ('\\Seen', '\\Flagged', 'ENCRYPTED')
-        msg.headers      # dict: {'received': ('from 1.m.ru', 'from 2.m.ru'), 'anti-virus': ('Clean',)}
+        msg.headers      # dict-like: {'received': ('from 1.m.ru', 'from 2.m.ru'), 'anti-virus': ('Clean',)}
         msg.size_rfc822  # int: 20664 bytes - size info from server (*useful with headers_only arg)
         msg.size         # int: 20377 bytes - size of received message
 
