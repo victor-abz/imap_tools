@@ -440,7 +440,8 @@ Big thanks to people who helped to develop this library 🎉:
 `errror <https://github.com/errror>`_,
 `hurricane-dorian <https://github.com/hurricane-dorian>`_,
 `dlucredativ <https://github.com/dlucredativ>`_,
-`ziima <https://github.com/ziima>`_
+`ziima <https://github.com/ziima>`_,
+`Zomono <https://github.com/Zomono>`_
 
 
 Help other open projects that you use 🚀
