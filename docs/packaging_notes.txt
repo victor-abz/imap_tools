@@ -15,7 +15,7 @@ https://packaging.python.org/tutorials/packaging-projects/
 
 3. Generating distribution archives
     cd C:\kvk\develop\Python\imap_tools\
-    C:\python\venv\imap_tools312-64\Scripts\python.exe C:\kvk\develop\Python\imap_tools\setup.py sdist bdist_wheel
+    C:\python\venv\imap_tools312-64\Scripts\python.exe -m build
 
 4. Check the distribution archives:
     C:\python\venv\imap_tools312-64\Scripts\python.exe -m twine check dist/*
